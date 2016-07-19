@@ -12,31 +12,31 @@ namespace MathHelper
         {
             Console.WriteLine("Здравствуйте, вас приветствует математическая программа");
             Console.WriteLine("Пожалуйста введите число.");
-            string S = Console.ReadLine();
+            string userInput = Console.ReadLine();
 
-            if (S == "q")
+            if (userInput == "q")
             {
                 return;
             }
 
-            int M = Int32.Parse(S);
-            long c1 = 1;
-            int c2 = 0;
-            int c3 = 0;
+            int number = Int32.Parse(userInput);
+            long fuct = 1;
+            int summ = 0;
+            int maxEvenNumber = 0;
 
-            for (int i = 1; i <= M; i++)
+            for (int i = 1; i <= number; i++)
             {
-                c1 *= i;
-                c2 += i;
+                fuct *= i;
+                summ += i;
                 if (i % 2 == 0)
                 {
-                    c3 = i;
+                    maxEvenNumber = i;
                 }
             }
 
-            Console.WriteLine("Факториал числа {0} равен {1}", M, c1);
-            Console.WriteLine("Сумма от 1 до {0} равна {1}", M, c2);
-            Console.WriteLine("Максимальное четное число меньше {0} равно {1}", M, c3);
+            Console.WriteLine("Факториал числа {0} равен {1}", number, fuct);
+            Console.WriteLine("Сумма от 1 до {0} равна {1}", number, summ);
+            Console.WriteLine("Максимальное четное число меньше {0} равно {1}", number, maxEvenNumber);
 
             Console.ReadKey();
         }
