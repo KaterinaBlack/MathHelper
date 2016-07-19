@@ -11,7 +11,7 @@ namespace MathHelper
         static void Main(string[] args)
         {
             Console.WriteLine("Здравствуйте, вас приветствует математическая программа");
-            Console.WriteLine("Пожалуйста введите число.");
+            Console.WriteLine("Пожалуйста, введите число.");
             string userInput = Console.ReadLine();
 
             if (userInput == "q")
