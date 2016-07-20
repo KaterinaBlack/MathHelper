@@ -14,14 +14,9 @@ namespace MathHelper
             if (TryGetNumberFromUser(out number))
             {
                 //CalculateFactorialAndSummAndMaxEvenNumber(number, out fact, out summ, out maxEvenNumber);
-                long fact = GetFactorial(number);
-                int summ = GetSummFrom1ToN(number);
-                int maxEvenNumber = GetMaxEvanNumber(number);
-
-                // Выводим результаты на консоль
-                Console.WriteLine("Факториал числа {0} равен {1}", number, fact);
-                Console.WriteLine("Сумма от 1 до {0} равна {1}", number, summ);
-                Console.WriteLine("Максимальное четное число меньше {0} равно {1}", number, maxEvenNumber);
+                GetFactorialAndOutput(number);
+                GetSummFrom1ToNAndOutput(number);
+                GetMaxEvanNumberAndOutput(number);
 
                 Console.ReadKey();
             }
@@ -29,7 +24,7 @@ namespace MathHelper
 
         }
 
-        private static int GetMaxEvanNumber(int number)
+        private static void GetMaxEvanNumberAndOutput(int number)
         {
             int maxEvenNumber = 0;
             for (int i = 1; i <= number; i++)
@@ -39,27 +34,27 @@ namespace MathHelper
                     maxEvenNumber = i;
                 }
             }
-            return maxEvenNumber;
+            Console.WriteLine("Максимальное четное число меньше {0} равно {1}", number, maxEvenNumber);
         }
 
-        private static int GetSummFrom1ToN(int number)
+        private static void GetSummFrom1ToNAndOutput(int number)
         {
             int summ = 0;
             for (int i = 1; i <= number; i++)
             {
                 summ += i;
             }
-            return summ;
+            Console.WriteLine("Сумма от 1 до {0} равна {1}", number, summ);
         }
 
-        private static long GetFactorial(int number)
+        private static void GetFactorialAndOutput(int number)
         {
             long fact = 1;           
             for (int i = 1; i <= number; i++)
             {
                 fact *= i;
             }
-            return fact;
+            Console.WriteLine("Факториал числа {0} равен {1}", number, fact);
         }
 
         private static void CalculateFactorialAndSummAndMaxEvenNumber(int number, out long fact, out int summ, out int maxEvenNumber)
