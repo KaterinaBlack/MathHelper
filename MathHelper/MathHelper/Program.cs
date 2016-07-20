@@ -13,6 +13,7 @@ namespace MathHelper
             int number;
             if (TryGetNumberFromUser(out number))
             {
+                // Производим вычисление факториала, суммы от 1 до N и максимального четного числа меньше N
                 long fuct = 1;
                 int summ = 0;
                 int maxEvenNumber = 0;
@@ -40,6 +41,7 @@ namespace MathHelper
 
         private static bool TryGetNumberFromUser(out int number)
         {
+            // Запрашиваем число у пользователя
             Console.WriteLine("Здравствуйте, вас приветствует математическая программа");
             Console.WriteLine("Пожалуйста, введите число.");
             string userInput = Console.ReadLine();
