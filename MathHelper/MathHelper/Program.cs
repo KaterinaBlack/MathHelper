@@ -13,9 +13,10 @@ namespace MathHelper
             int number;
             if (TryGetNumberFromUser(out number))
             {
-                long fact;
-                int summ, maxEvenNumber;                
-                CalculateFactorialAndSummAndMaxEvenNumber(number, out fact, out summ, out maxEvenNumber);
+                //CalculateFactorialAndSummAndMaxEvenNumber(number, out fact, out summ, out maxEvenNumber);
+                long fact = GetFactorial(number);
+                int summ = GetSummFrom1ToN(number);
+                int maxEvenNumber = GetMaxEvanNumber(number);
 
                 // Выводим результаты на консоль
                 Console.WriteLine("Факториал числа {0} равен {1}", number, fact);
@@ -26,6 +27,39 @@ namespace MathHelper
             }
 
 
+        }
+
+        private static int GetMaxEvanNumber(int number)
+        {
+            int maxEvenNumber = 0;
+            for (int i = 1; i <= number; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    maxEvenNumber = i;
+                }
+            }
+            return maxEvenNumber;
+        }
+
+        private static int GetSummFrom1ToN(int number)
+        {
+            int summ = 0;
+            for (int i = 1; i <= number; i++)
+            {
+                summ += i;
+            }
+            return summ;
+        }
+
+        private static long GetFactorial(int number)
+        {
+            long fact = 1;           
+            for (int i = 1; i <= number; i++)
+            {
+                fact *= i;
+            }
+            return fact;
         }
 
         private static void CalculateFactorialAndSummAndMaxEvenNumber(int number, out long fact, out int summ, out int maxEvenNumber)
