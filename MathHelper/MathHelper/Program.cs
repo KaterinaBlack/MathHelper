@@ -13,12 +13,10 @@ namespace MathHelper
             int number;
             if (TryGetNumberFromUser(out number))
             {
-                //CalculateFactorialAndSummAndMaxEvenNumber(number, out fact, out summ, out maxEvenNumber);
                 long fact = GetFactorial(number);
                 int summ = GetSummFrom1ToN(number);
                 int maxEvenNumber = GetMaxEvanNumber(number);
 
-                // Выводим результаты на консоль
                 Console.WriteLine("Факториал числа {0} равен {1}", number, fact);
                 Console.WriteLine("Сумма от 1 до {0} равна {1}", number, summ);
                 Console.WriteLine("Максимальное четное число меньше {0} равно {1}", number, maxEvenNumber);
@@ -83,7 +81,7 @@ namespace MathHelper
         private static bool TryGetNumberFromUser(out int number)
         {
             Console.WriteLine("Здравствуйте, вас приветствует математическая программа");
-            Console.WriteLine("Пожалуйста, введите число.");
+            Console.WriteLine("Пожалуйста, введите число. Для выхода введите q");
             string userInput = Console.ReadLine();
             if (userInput == "q")
             {
